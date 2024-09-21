@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RentRide</title>
+    <link rel="icon" type="image/x-icon" href="https://image.shutterstock.com/image-vector/car-automobile-steering-wheel-driving-260nw-495826939.jpgv">
+    <style>
+        /* Existing styles remain unchanged */
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333333;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: yellow;
+            text-align: center;
+            padding: 20px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: #111111;
+        }
+         
+
+        .nav-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 8px; /* Adjust spacing as needed */
+    display: inline-block;
+}
+
+ul li a {
+    display: flex;
+    align-items: center;
+    color: yellow;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    background-color: #111111;
+}
+
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        .logo-name {
+            color: yellow;
+            font-size: 24px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        body {
+            background-image: url('https://tse3.mm.bing.net/th?id=OIP.Xtm6M5x7T6qsMyJwdAJRLgHaD0&pid=Api&P=0&h=180');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+
+        .menu-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 100%;
+            height: 4px;
+            background-color: yellow;
+            border-radius: 2px;
+        }
+
+        .nav-menu {
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: white;
+            padding: 10px;
+            border: 1px solid #ccc;
+            display: none;
+        }
+
+        .nav-menu a {
+            display: block;
+            text-decoration: none;
+            color: #333;
+            padding: 10px 0;
+        }
+
+        .show {
+            display: block;
+        }
+
+        /* New form styling */
+        .form-container {
+            max-width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-container select {
+            width: 100%;
+            padding: 9px;
+            margin-bottom: 20px;
+            border: 1px solid black;
+            border-radius: 4px;
+        }
+
+        .form-container button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: yellow;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="logo-container">
+            <img src="https://image.shutterstock.com/image-vector/car-automobile-steering-wheel-driving-260nw-495826939.jpg" alt="RentRide Logo" class="logo">
+            <span class="logo-name">RentRide</span>
+        </li>
+        <li><a href="#Home">Home</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="nav-menu" id="navMenu">
+            <a href="#home">Login</a>
+            <a href="#services">Signup</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </ul>
+
+    <h1 style="text-align: center;">VEHICLE FOR RENTAL</h1>
+
+    <<h2>Booking Status</h2>
+    <form id="bookingForm" class="form-container">
+        <label for="bookingId">Booking ID:</label>
+        <input type="text" id="bookingId" name="bookingId" placeholder="Enter your booking ID" required>
+
+        <button type="submit">Check Status</button>
+    </form>
+
+    <div id="statusResult" class="hidden">
+        <h3>Booking Status:</h3>
+        <p id="bookingStatus">Pending...</p>
+    </div>
+
+    <script>
+        // Handle booking status form submission
+        document.getElementById('bookingForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            document.getElementById('statusResult').classList.remove('hidden');
+            document.getElementById('bookingStatus').innerText = 'Confirmed'; // Placeholder action
+            // Here you would typically make an AJAX call to check the booking status
+        });
+    </script>
+
+</body>
+</html>
